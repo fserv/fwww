@@ -1,9 +1,4 @@
-# Fserv
-
- Fserv is the site for fast server applications using C++/C.
-
-
-## fwww
+# Fwww 
 
  Fwww is the repository for fast Web server applications.
  It is based on C++ for fast Web project development, release, and deployment.
@@ -12,12 +7,4 @@
  connect to the back-end JaguarDB for data reads and writes.
  The back-end JaguarDB is a highly scalable distributed NoSQL database, developed
  with C++/C. It is a fast NoSQL datastore to manage time-series and location data.
-
-## fmsg
-
-  Fmsg will be the repository for fast messaging among Internet hosts.
-  In contrast to other messaging environments where the endpoints stay
-  long term, i.e., connections stay for long time, fmsg handles messaging when connections
-  are ephemeral, i.e., connections between endpoints last for a very short time (in milliseconds).
-
 
