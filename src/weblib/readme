@@ -1,0 +1,14 @@
+1. How to build:
+   
+   make
+
+
+2. Built library libweb.a is in:
+   
+   ../../build/lib
+
+
+3. Temporary object files are in:
+
+   ../../build/tmp/weblib
+

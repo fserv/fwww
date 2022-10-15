@@ -1,0 +1,23 @@
+#######################################################################
+##
+##  FastCGI Module 
+## --------------- 
+##
+## See https://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_ModFastCGI
+##
+#######################################################################
+server.modules += ( "mod_access" )
+server.modules += ( "mod_fastcgi" )
+
+fastcgi.debug = 1
+fastcgi.balance = "least-connection"
+fastcgi.server = ( 
+  "/fwww/" => (( 
+    "socket" => "FASTCGI_UNIX_SOCKET",
+	"bin-path" => "INSTALL_DIR/bin_dir/fwww",
+	"read-timeout" => "60",
+	"check-local" => "disable"
+  )))
+
+server.max-keep-alive-idle = 2
+server.document-root  = "INSTALL_DIR/htdocs"

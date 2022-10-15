@@ -1,0 +1,11 @@
+1. How to build:
+
+    make
+
+2. The built binary executable program is:
+
+    ../build/bin/fwww
+
+3. The temporary object files are located in:
+
+    ../../build/tmp/example/
