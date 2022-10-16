@@ -16,23 +16,11 @@
 	./1_setup_development.sh
 
 
-## For Testing
-
-	Developers can set up their testing environment with:
-
-	./2_setup_test.sh
-
-
-	Developers can run and add test cases with:
-
-	./run_test.sh
-
-
 ## For Release
 
 	After development and testing, developers can make a release:
 
-    ./3_make_release.sh
+    ./2_make_release.sh
 
 
 	The release is a compresses tar file that can be shipped to production
