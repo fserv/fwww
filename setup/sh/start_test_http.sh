@@ -3,8 +3,7 @@
 arg=$1
 
 OPENSSL_LIB=../../thirdparty/openssl/install_dir/lib64
-export LD_LIBRARY_PATH=$OPENSSL_LIB/:$LD_LIBRARY_PATH
-echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH=$OPENSSL_LIB:$LD_LIBRARY_PATH
 
 HTTPD=../../thirdparty/lighttpd/install_dir/sbin/lighttpd
 CONF=$HOME/fwww/conf_dir/lighttpd.conf

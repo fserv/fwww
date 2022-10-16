@@ -48,7 +48,9 @@ sed -e "s|INSTALL_DIR|$INSTALL_DIR|" \
 ### You may want to re-create the file for your own organization by
 ## execuing the following script which will require your domain name
 ## other information:
-./makecertpem.sh
+if [[ ! -f "selfsignedcert.pem" ]]; then
+	./makecertpem.sh
+fi
 
 
 ### copy the PEM file to proper place
