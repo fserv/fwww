@@ -23,8 +23,8 @@ if [[ -d "release/fwww_$version/bin_dir" ]]; then
 	/bin/rm -rf release/fwww_$version
 fi
 
-if [[ -f "release/fwww-${version}.tar.gz" ]]; then
-	/bin/rm -f release/fwww-${version}.tar.gz
+if [[ -f "release/fwww_${version}.tar.gz" ]]; then
+	/bin/rm -f release/fwww_${version}.tar.gz
 fi
 
 mkdir -p release/fwww_$version/bin_dir
@@ -66,8 +66,8 @@ fi
 /bin/rm -f release/fwww_$version/conf_dir/conf.d/fastcgi.conf
 
 cd release
-tar zcf fwww-${version}.tar.gz fwww_$version
+tar zcf fwww_${version}.tar.gz fwww_$version
 
-echo "Release file is in release/fwww-${version}.tar.gz"
+echo "Release file is in release/fwww_${version}.tar.gz"
 echo
 

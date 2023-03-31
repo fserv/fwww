@@ -34,15 +34,20 @@ cd $VER
 
 ./configure \
     --prefix=$pd/install_dir \
+    --without-pcre2 \
+    --disable-shared \
+    --enable-static \
     --with-openssl \
     --with-openssl-includes=${OPENSSL_INSTALL_DIR}/include \
-    --with-openssl-libs=${OPENSSL_INSTALL_DIR}/lib64 
+    --with-openssl-libs=${OPENSSL_INSTALL_DIR}/lib64  \
+    --with-crypto-lib=${OPENSSL_INSTALL_DIR}/lib64 
 
 make
 
-LOBJS=`/bin/ls lighttpd-*.o |grep -v angel|tr '\n' ' '`
-gcc -o lighttpd ${LOBJS} ls-hpack/lighttpd-lshpack.o \
-	${OPENSSL_INSTALL_DIR}/lib64/libcrypto.a -lpcre2-8 -ldl
+LOBJS=`/bin/ls src/lighttpd-*.o |grep -v angel|tr '\n' ' '`
+gcc -static-libgcc -static -o lighttpd ${LOBJS} src/ls-hpack/lighttpd-lshpack.o ${OPENSSL_INSTALL_DIR}/lib64/libcrypto.a 
+	
+/bin/cp -f lighttpd src/
 
 make install
 date
