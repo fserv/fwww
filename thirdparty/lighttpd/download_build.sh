@@ -23,14 +23,16 @@ else
 	tar zxf $FILE
 fi
 
-if [[ -f "$pd/install_dir/sbin/lighttpd" ]]; then
-	echo "Lighttpd is already built, OK"
-	exit 0
-fi
+#if [[ -f "$pd/install_dir/sbin/lighttpd" ]]; then
+#	echo "Lighttpd is already built, OK"
+#	exit 0
+#fi
 
 echo "Build lighttpd ... "
 date
 cd $VER
+
+make clean
 
 ./configure \
     --prefix=$pd/install_dir \
@@ -45,6 +47,7 @@ cd $VER
 make
 
 LOBJS=`/bin/ls src/lighttpd-*.o |grep -v angel|tr '\n' ' '`
+LOBJS=`/bin/ls src/*.o |grep -v angel|tr '\n' ' '`
 gcc -static-libgcc -static -o lighttpd ${LOBJS} src/ls-hpack/lighttpd-lshpack.o ${OPENSSL_INSTALL_DIR}/lib64/libcrypto.a 
 	
 /bin/cp -f lighttpd src/

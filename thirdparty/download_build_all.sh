@@ -21,6 +21,7 @@ echo
 
 echo "Download and build lighttpd ..."
 cd $pd/lighttpd
+./download_build_shared_objects.sh
 ./download_build.sh
 date
 echo "Build lighttpd done"

@@ -12,9 +12,19 @@ pd=`pwd -P`
 version=$1
 
 if [[ "x$version" = "x" ]]; then
+    echo
 	echo "Please provide a version for the release"
+	echo "The package will be named fwww_<version>.tar.gz "
+    echo
 	echo "$0  <version>"
+    echo
+	echo "For example:"
+    echo
 	echo "$0  1.0"
+    echo
+    echo "Also, it recommended that your deployment platform (where it will be run)"
+    echo "has same Linux distribution as your current development platform"
+    echo
 	exit 1
 fi
 
@@ -42,6 +52,7 @@ else
 fi
 
 /bin/cp -f setup/sh/install.sh  release/fwww_$version
+echo "To install the package, run the command:  ./install.sh" > release/fwww_$version/readme
 /bin/cp -f build/bin/fwww release/fwww_$version/bin_dir/
 /bin/cp -f thirdparty/lighttpd/install_dir/sbin/*  release/fwww_$version/bin_dir/
 /bin/cp -f setup/sh/setup_lighttpd_conf_dir.sh  release/fwww_$version/bin_dir/
@@ -69,5 +80,7 @@ cd release
 tar zcf fwww_${version}.tar.gz fwww_$version
 
 echo "Release file is in release/fwww_${version}.tar.gz"
+echo "It recommended that your deployment platform (where it will be run)"
+echo "has same Linux distribution as your current development platform"
 echo
 

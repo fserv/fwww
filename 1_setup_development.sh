@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ### Required software to develop fwww
 # g++ and make
@@ -40,16 +40,24 @@ make
 echo
 
 ### make a simple work directory
-echo "Make a directory myproj for my first project ..."
+echo "Make a directory private_myproj for my first project ..."
 cd $pd
-mkdir -p myproj
-/bin/cp -f example/* myproj/
-cd $pd/myproj
+if [[ ! -d "private_myproj" ]]; then
+    mkdir -p private_myproj
+    /bin/cp -f example/* private_myproj/
+fi
+
+cd $pd/private_myproj
 make
 cd $pd
 /bin/cp -f build/bin/fwww $HOME/fwww/bin_dir/
 echo "Basic program is build/bin/fwww"
 echo
+
+
+### if you have other projects, work here
+### 
+
 
 ### start http server
 echo "Starting web server ..."

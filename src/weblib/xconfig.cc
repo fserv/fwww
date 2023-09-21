@@ -21,7 +21,7 @@ sstr XConfig::getEnv(const char *name)
 }
 
 // given progName, open progName.conf for parameters
-XConfig::XConfig( const sstr &progName )
+XConfig::XConfig( const sstr &confName )
 {
     // open the file and store it into hash table
     //  suffix     contentType
@@ -31,11 +31,8 @@ XConfig::XConfig( const sstr &progName )
     //  XENV_P3=value3
 
 
-	// sstr configFile = progName + ".conf";
-	ssplit arp(progName, '.');
-
     // if exe is  aaa.exe then conf file is ../conf/aaa.conf
-	sstr configFile = "../conf/" + arp[0] + ".conf";
+	sstr configFile = "../conf_dir/" + confName;
     FILE *fp = fopen(configFile.c_str(), "r");
     char line[1024];
     sstr str;

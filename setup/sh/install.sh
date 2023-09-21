@@ -13,6 +13,8 @@ cd bin_dir
    $FWWWHOME/bin_dir
 
 
+echo "XENV_DEBUG=NO" > $FWWWHOME/conf_dir/fwww.conf
+
 cd $FWWWHOME/bin_dir
 ./start_prod_http.sh -f
 echo "Web server fwww is installed and started"

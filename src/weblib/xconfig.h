@@ -11,7 +11,7 @@ class XConfig
 
 		static sstr getEnv( const char *name ) ;
 
-        XConfig( const sstr &progName );
+        XConfig( const sstr &confName );
         ~XConfig();
 
         sstr getValue( const sstr &name ) const ;

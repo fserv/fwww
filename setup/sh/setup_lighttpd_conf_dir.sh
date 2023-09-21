@@ -7,7 +7,7 @@ HTTPS_PORT=4433           # Web server https listening port
 
 
 ### Run as user and group names.
-RUNAS_USER_NAME=$LOGNAME  # lighttpd runs as own user name
+RUNAS_USER_NAME=`id -un`  # lighttpd runs as own user name
 RUNAS_GROUP_NAME=`id -gn` # lighttpd runs as own group name
 
 ### SSL certificate file. Default is a self-signed cert file
