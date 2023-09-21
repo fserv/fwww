@@ -1,6 +1,6 @@
-# Fwww 
+# fwww 
 
- Fwww is the repository for fast Web server applications.
+ fwww is the repository for fast Web server applications.
  It is based on C++ for fast Web project development, release, and deployment.
  In fwww, the light-weight and fast Web server lighttpd serves user requests,
  which are handed over to C++/C fastcgi processes. The C++/C fastcgi processes
@@ -43,5 +43,17 @@
     you development node. That is, if you develop fwww project on Ubuntu 22.04, then 
     you should deploy it on Ubuntu 22.04 platform.
 
+
+### Pre-compiled Package
+
+    The author of the fwww project has compiled a binary on Ubuntu 22.04 and the tar file
+    is uploaded to:
+
+        http://www.jaguardb.com/download/fwww_Ubuntu_22.04-3.3.6.tar.gz
+
+    This package takes http requests and connects to jaguar vector database to fetch data
+    from the database. The source code is in the example directory under this project.
+    Developers can copy the code to another directory and build your customized C++ application server
+    saving data and searching data with a vector database.
 
 
