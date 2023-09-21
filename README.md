@@ -20,7 +20,7 @@
 
 	After development and testing, developers can make a release:
 
-    ./2_make_release.sh
+    ./2_make_release.sh  <VERSION>
 
 
 	The release is a compresses tar file that can be shipped to production
